@@ -1,0 +1,213 @@
+/* PLACE YOU CUSTOM STYLES IN THIS FILE */
+
+body{
+    overflow-x: hidden !important;
+}
+
+.dx-form .form-control-style-3 {
+    margin-bottom: 15px;
+}
+
+#signup .dx-form .form-control, #login .dx-form .form-control {
+    padding: 12px 80px;
+}
+
+.err-msg{
+    margin-top: 25px;
+    color: white;
+    opacity: 0.8;
+}
+
+.inner p{
+    margin-bottom: 0.5rem;
+}
+
+.register-msg{
+    padding-top: 25px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.mnt5{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#profile-form label {
+    display: inline !important;
+}
+
+.dx-dropdown.dx-dropdown-signin>a::before, .dx-dropdown.dx-dropdown-signin>button::before {
+    margin-left: -30px;
+}
+
+.dx-blog-post .dx-blog-post-box {
+    padding-left: 0px;
+    padding-right: 50px;
+}
+
+.dx-comment .dx-comment-img+.dx-comment-cont {
+    width: 100%;
+}
+
+.btn-danger {
+    color: rgba(0,0,0,0.9);
+    background-color: white;
+    border-color: black;
+    border-width: 2px;
+}
+
+.btn-danger:hover{
+    color: white;
+    background-color:black;
+    border-color: black;
+    border-width: 2px;
+}
+
+.vote-count{
+    border: ;
+    width: 10px;
+    background-color: #2B72E6;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    line-height: 2;
+}
+
+.dx-comment .dx-comment-cont .dx-comment-name {
+  top: 0px;
+}
+
+
+.dx-comment-profession{
+	margin-left: 10px;
+}
+
+.label-doctor{
+  background-color: #ddd;
+  padding: 7px 12px;
+  border-radius: 5px;
+  margin-left: -8px;
+  color: #2ecc71;
+}
+
+.label-user{
+  background-color: #ddd;
+  padding: 7px 12px;
+  border-radius: 5px;
+  margin-left: -8px;
+  color: #ffbf00;
+}
+
+.dx-comment .dx-comment-cont .dx-comment-vote {
+	margin-top: 35px !important;
+}
+
+/****************custom checkbox*********************/
+.form-check-inline {
+	margin-top: 10px;
+}
+
+/* Customize the label (the container) */
+.form-check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.label-text{
+  font-size: 15px;
+  color: white
+}
+
+/* Hide the browser's default checkbox */
+.form-check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(17, 17, 17);
+  border: 2px solid white;
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.form-check-container:hover input ~ .checkmark {
+  background-color:white;
+}
+
+/* When the checkbox is checked, add a blue background */
+.form-check-container input:checked ~ .checkmark {
+  background-color:rgb(17, 17, 17);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.form-check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.form-check-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
+
+.change-form #content-main > form .submit-row .deletelink-box .deletelink{
+  height: auto !important;
+}
+
+.spacing {
+  margin: 80px 0 !important;
+}
+
+.search-msg{
+  margin-top: 15px;
+}
+
+.q-term {
+  color: #2B72E6;
+  border-bottom: 5px solid #2B72E6;
+}
+
+.match-q {
+  border: 4px solid #40B2C5;
+  border-radius: 50%;
+  padding: 6px 19px;
+  margin-bottom: 30px;
+}
+
+.no-match {
+  color: rgb(212, 59, 59);
+  margin-bottom: 30px;
+}

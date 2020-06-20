@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="dx-main">
+    <div class="dx-box-1 pb-100 bg-grey-6">
+        <div class="container">
+            <div class="row vertical-gap md-gap">
+                <div class="col-lg-8">
+                    <h2 class="h4">Post A New Topic</h2>
+                    <div class="dx-box mt-55">
+                        <form action="" method="POST" class="dx-form mt-50 mb-45">
+                            <div class="row vertical-gap">
+                                <div class="col-12">
+                                    {% csrf_token %}
+                                    {{ form }}
+                                    <input type="submit" class="dx-btn dx-btn-lg" value="Post">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+
+                    <!-- <div class="dx-sticky dx-sidebar" data-sticky-offsetTop="120" data-sticky-offsetBot="40">
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">
+                                Subscribe to Newsletter
+                            </div>
+                            <div class="dx-widget-subscribe">
+                                <div class="dx-widget-text">
+                                    <p>Join the newsletter to receive news, updates, new products and freebies in your
+                                        inbox.</p>
+                                </div>
+                                <form action="#" class="dx-form dx-form-group-inputs">
+                                    <input type="email" name="" value="" aria-describedby="emailHelp"
+                                        class="form-control form-control-style-2" placeholder="Your Email Address">
+                                    <button class="dx-btn dx-btn-lg dx-btn-icon"><span
+                                            class="icon fas fa-paper-plane"></span></button>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <form action="#" class="dx-form dx-form-group-inputs">
+                                <input type="text" name="" value="" class="form-control form-control-style-2"
+                                    placeholder="Search...">
+                                <button class="dx-btn dx-btn-lg dx-btn-grey dx-btn-grey-style-2 dx-btn-icon"><span
+                                        class="icon fas fa-search"></span></button>
+                            </form>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">Categories</div>
+                            <ul class="dx-widget-categories">
+                                <li>
+                                    <a href="single-article-category.html">
+                                        <span class="icon pe-7s-angle-right"></span>
+                                        <span class="dx-widget-categories-category">Design & Coding</span>
+                                        <span class="dx-widget-categories-badge">(12)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="single-article-category.html">
+                                        <span class="icon pe-7s-angle-right"></span>
+                                        <span class="dx-widget-categories-category">News</span>
+                                        <span class="dx-widget-categories-badge">(8)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="single-article-category.html">
+                                        <span class="icon pe-7s-angle-right"></span>
+                                        <span class="dx-widget-categories-category">Inspirations</span>
+                                        <span class="dx-widget-categories-badge">(2)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="single-article-category.html">
+                                        <span class="icon pe-7s-angle-right"></span>
+                                        <span class="dx-widget-categories-category">Theme Reviews</span>
+                                        <span class="dx-widget-categories-badge">(14)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">
+                                Latest Posts
+                            </div>
+                            <a href="single-post.html" class="dx-widget-post">
+
+                                <span class="dx-widget-post-img"><img src="assets/images/blog-3-sm.png" alt=""></span>
+                                <span class="dx-widget-post-text">
+                                    <span class="dx-widget-post-title">The Big Thing in Design</span>
+                                    <span class="dx-widget-post-date">25 Sep 2018</span>
+                                </span>
+
+                            </a>
+                            <a href="single-post.html" class="dx-widget-post">
+
+                                <span class="dx-widget-post-img"><img src="assets/images/blog-1-sm.png" alt=""></span>
+                                <span class="dx-widget-post-text">
+                                    <span class="dx-widget-post-title">Will Coding Ever Rule the World?</span>
+                                    <span class="dx-widget-post-date">24 Sep 2018</span>
+                                </span>
+
+                            </a>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">
+                                Tags Widget
+                            </div>
+                            <ul class="dx-widget-tags">
+                                <li><a href="#">Art</a></li>
+                                <li><a href="#">People</a></li>
+                                <li><a href="#">Branding</a></li>
+                                <li><a href="#">City</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Nature</a></li>
+                                <li><a href="#">Lifestyle</a></li>
+                                <li><a href="#">Photography</a></li>
+                            </ul>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">
+                                Our Twitter
+                            </div>
+                            <div class="dx-twitter-list" data-twitter-count="3"></div>
+                        </div>
+
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

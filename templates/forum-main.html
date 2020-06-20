@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="dx-main">
+    <header class="dx-header dx-box-1">
+        <div class="container">
+            <div class="bg-image bg-image-parallax">
+                <img src="{% static 'images/header.jpg' %}" class="jarallax-img" alt="">
+                <div style="background-color: rgba(27, 27, 27, .8);"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-xl-7">
+                    <h1 class="h2 mb-30 text-white text-center">A collaborative forum to help people with their health related issue.</h1>
+                    <form action="{% url 'search-result' %}" class="dx-form dx-form-group-inputs">
+                        <input type="text" name="q" value="" class="form-control" placeholder="Keyword search...">
+                        <button  type="submit" class="dx-btn dx-btn-lg">Search</button>
+                    </form>
+                </div>
+                {% if messages %}
+                    <div class="search-msg">
+                        {% for message in messages %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <!-- <div class="dx-box bg-white">
+        <div class="container">
+            <ul class="dx-links text-center">
+                <li><a href="help-center.html">Support Home</a></li>
+                <li><a href="documentations.html">Documentations</a></li>
+                <li><a href="articles.html">Knowledge Base</a></li>
+                <li class="active"><a href="forums.html">Forums</a></li>
+                <li><a href="ticket.html">Ticket System</a></li>
+            </ul>
+        </div>
+    </div> -->
+    <div class="dx-separator"></div>
+
+    <div class="dx-box-5 pb-100 bg-grey-6">
+        <div class="container">
+            <div class="row vertical-gap md-gap">
+                <div class="col-lg-8">
+                    <div class="dx-box dx-box-decorated">
+                        <div class="dx-blog-post">
+                            <div class="dx-blog-post-box pt-30 pb-30">
+                                <h2 class="h4 mnt-5 mb-9">Forum Topics</h2>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="dx-table dx-table-default">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Topic</th>
+                                            <th scope="col">Views</th>
+                                            <th scope="col">Answers</th>
+                                            <th scope="col">Post Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for post in user_posts %}
+                                        <tr>
+                                            <th scope="row">
+                                                <a href="{% url 'topic-detail' post.id %}" class="dx-table-default-title">{{ post.title }}</a>
+                                                <p class="mb-0">{{ post.description }}</p>
+                                            </th>
+                                            <td>{{ post.topic_view_count }}</td>
+                                            
+                                           
+                                            <td>{{ post.answer_count }}</td>
+                                            
+                                            
+                                            <td class="dx-table-lastPost">
+                                                <div class="dx-table-default-info">
+                                                    <p class="mb-0">by <a href="#">{{ post.author.user }}</a><span class="dib">{{ post.date_created }}</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4">
+                    <div class="dx-sticky dx-sidebar" data-sticky-offsetTop="120" data-sticky-offsetBot="40">
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">
+                                Subscribe to Newsletter
+                            </div>
+                            <div class="dx-widget-subscribe">
+                                <div class="dx-widget-text">
+                                    <p>Join the newsletter to receive news, updates, new products and freebies in your
+                                        inbox.</p>
+                                </div>
+                                <form action="#" class="dx-form dx-form-group-inputs">
+                                    <input type="email" name="" value="" aria-describedby="emailHelp"
+                                        class="form-control form-control-style-2" placeholder="Your Email Address">
+                                    <button class="dx-btn dx-btn-lg dx-btn-icon"><span
+                                            class="icon fas fa-paper-plane"></span></button>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <form action="#" class="dx-form dx-form-group-inputs">
+                                <input type="text" name="" value="" class="form-control form-control-style-2"
+                                    placeholder="Search...">
+                                <button class="dx-btn dx-btn-lg dx-btn-grey dx-btn-grey-style-2 dx-btn-icon"><span
+                                        class="icon fas fa-search"></span></button>
+                            </form>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">
+                                Latest Articles
+                            </div>
+                            <a href="single-article.html" class="dx-widget-link">
+                                <span class="dx-widget-link-text">How to manually import Demo data (if you faced with
+                                    problems in one-click demo import)</span>
+                                <span class="dx-widget-link-date">6 Sep 2018</span>
+                            </a>
+                            <a href="single-article.html" class="dx-widget-link">
+                                <span class="dx-widget-link-text">Make menu dropdown working without JavaScript</span>
+                                <span class="dx-widget-link-date">2 Sep 2018</span>
+                            </a>
+                            <a href="single-article.html" class="dx-widget-link">
+                                <span class="dx-widget-link-text">Add top menu link inside dropdown on mobile
+                                    devices</span>
+                                <span class="dx-widget-link-date">27 Aug 2018</span>
+                            </a>
+                        </div>
+
+
+                        <div class="dx-widget dx-box dx-box-decorated">
+                            <div class="dx-widget-title">
+                                Latest Forum Topics
+                            </div>
+                            <a href="single-article.html" class="dx-widget-link">
+                                <span class="dx-widget-link-text">Need help with customization. Some options are not
+                                    appearing...</span>
+                                <span class="dx-widget-link-date">6 Sep 2018</span>
+                            </a>
+                            <a href="single-article.html" class="dx-widget-link">
+                                <span class="dx-widget-link-text">My images on profile and item pages doesnt show up?!
+                                    Whats the matter?</span>
+                                <span class="dx-widget-link-date">2 Sep 2018</span>
+                            </a>
+                            <a href="single-article.html" class="dx-widget-link">
+                                <span class="dx-widget-link-text">Theme not updating in downloads</span>
+                                <span class="dx-widget-link-date">27 Aug 2018</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

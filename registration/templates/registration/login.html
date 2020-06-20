@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div id="login" style="background: #1B1B1B; padding-top: 40px;">
+    {% if messages %}
+    <div class="register-msg col-md-6 offset-md-3">
+        {% for message in messages %}
+        <h6 class="text-white">{{ message }}</h6>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="dx-signin-content dx-signin text-center">
+        <h1 class="h3 text-white mb-30">Log In</h1>
+        <form method="POST" action="" class="dx-form">
+            {% csrf_token %}
+            <div class="dx-form-group-md">
+                <input type="text" name="username" class="form-control form-control-style-4" placeholder="Username">
+            </div>
+            <div class="dx-form-group-md">
+                <input type="password" name="password" class="form-control form-control-style-4" placeholder="Password">
+            </div>
+            <div class="dx-form-group-md">
+                <input type="submit" value="Log In" class="form-control form-control-style-4">
+            </div>
+            <div class="dx-form-group-md">
+                <div class="d-flex justify-content-between">
+                    <a href="javascript:;">Reset your password</a>
+                    <a href="{% url 'register' %}">Sign Up</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
+

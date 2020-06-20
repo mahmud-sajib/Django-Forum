@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="dx-main">
+    <div class="dx-box-5 pb-100 bg-grey-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="dx-box-decorated">
+                        <div class="dx-box-content text-center">
+                            <h2 class="h4">Profile Information</h2>
+                            <div class="dx-comment-img">
+                                <img style="width: 100px;" style="margin-bottom: 20px;"
+                                    src="{{ user.author.profile_pic.url }}" alt="" class="rounded-circle">
+                            </div>
+                            <div class="row" style="margin-top: 20px;">
+                                <div class="col-lg-4">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i> {{ user.username }}
+                                </div>
+                                <div class="col-lg-4">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i> {{ user.email }}
+                                </div>
+                                <div class="col-lg-4"> <i class="fa fa-bolt" aria-hidden="true"></i>
+                                    {% if user.author.is_doctor %}
+                                    Certified Doctor
+                                    {% else %}
+                                    
+                                    General User
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="dx-box-decorated">
+                        <div class="dx-box-content">
+                            <h2 class="h4" style="margin-left: 25px;">Update Profile</h2>
+                            <form id="profile-form" method="POST" action="" class="dx-form"
+                                enctype="multipart/form-data">
+                                <div class="dx-box-content">
+                                    {% csrf_token %}
+                                    {{ user_form.as_p }}
+                                    {{ profile_form.as_p }}
+                                    <div class="dx-form-group">
+                                        <input type="submit" value="Save Changes" class="dx-btn dx-btn-xl dx-btn-block">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {% if messages %}
+                    <div class="register-msg">
+                        {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div id="signup" style="background: #1B1B1B;">
+    
+    <div class="dx-signin text-center">
+        <h1 class="h3 text-white mb-30">Sign Up</h1>
+
+        <form method="POST" class="dx-form">
+            {% csrf_token %}
+            <div class="dx-form-group-md">
+                {{ reg_form.username }}
+            </div>
+            <div class="dx-form-group-md">
+                {{ reg_form.email }}
+            </div>
+            <div class="dx-form-group-md">
+                {{ reg_form.password1 }}
+            </div>
+            <div class="dx-form-group-md">
+                {{ reg_form.password2 }}
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-container">
+                    <span class="label-text"> I am a Registered Doctor</span>   
+                    {{ pro_form.is_doctor }}
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            
+              
+            <div class="dx-form-group-md">
+                <input type="submit" value="Sign Up">
+            </div>
+            
+
+            <div class="dx-form-group-md">
+                <div class="d-flex justify-content-between">
+                    <span style="color:#bababa;">Already have an account?</span>   
+                    <a href="{% url 'login' %}">Log In</a>
+                </div>
+            </div>
+        </form>
+        <div class="err-msg">
+            {% if reg_form.errors %}
+                <!-- Error messaging -->
+                <div id="errors">
+                    <div class="inner">
+                        <p>There were some errors in the information you entered. Please correct the following:</p>
+                        <ol style="text-align: left;">
+                            {% for field in reg_form %}
+                                {% if field.errors %}
+                                    <li>{{ field.label }}: {{ field.errors|striptags }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+                <!-- /Error messaging -->
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+ <script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = 'Username';
+    form_fields[2].placeholder = 'Email';
+    form_fields[3].placeholder = 'Password';
+    form_fields[4].placeholder = 'Confirm Password';
+
+    
+    var count = 1;
+    
+    for (var field in form_fields){
+        
+        
+        if (count == 6){
+            form_fields[field].className += '';
+        } else {
+            form_fields[field].className += 'form-control form-control-style-4';
+        }
+        
+        count += 1
+    }
+        
+   
+</script>
+
+{% endblock content %}
+

@@ -1,0 +1,335 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>MedicAid | Community Forum for People to Discuss Health Related Issue</title>
+
+    <meta name="description" content="Amdesk - Help Center HTML template for your digital products">
+    <meta name="keywords" content="helpdesk, forum, template, HTML template, responsive, clean">
+    <meta name="author" content="nK">
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700"
+        rel="stylesheet"><!-- %7c -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="{% static 'vendor/fancybox/dist/jquery.fancybox.min.css' %}">
+
+    <!-- Pe icon 7 stroke -->
+    <link rel="stylesheet" href="{% static 'vendor/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css' %}">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/swiper/dist/css/swiper.min.css' %}">
+
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/dropzone/dist/min/dropzone.min.css' %}">
+
+    <!-- Quill -->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/quill/dist/quill.snow.css' %}">
+
+    <!-- Font Awesome -->
+    <script defer src="{% static 'vendor/fontawesome-free/js/all.js' %}"></script>
+    <script defer src="{% static 'vendor/fontawesome-free/js/v4-shims.js' %}"></script>
+
+    <!-- Amdesk -->
+    <link rel="stylesheet" href="{% static 'css/amdesk.min.css' %}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav
+        class="dx-navbar dx-navbar-top dx-navbar-collapse dx-navbar-sticky dx-navbar-expand-lg dx-navbar-dropdown-triangle dx-navbar-autohide">
+        <div class="container">
+
+            <a href="{% url 'home' %}" class="dx-nav-logo">
+                <h2 class="text-white" style="margin-top:0px; padding-top:10px; margin-bottom:0;">MedicAid</h2>
+            </a>
+
+
+            <button class="dx-navbar-burger">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="dx-navbar-content">
+
+                <ul class="dx-nav dx-nav-align-left">
+
+                    
+                    <li class="dx-drop-item">
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
+                        
+                    </li>
+                    <li class="dx-drop-item">
+                        <a href="{% url 'user-post' %}">
+                            Post A Topic
+                        </a>
+                        
+                    </li>
+                </ul>
+
+                <ul class="dx-nav dx-nav-align-right">
+                    
+                    {% if user.is_authenticated %}
+                    <li>
+                        <div class="dropdown dx-dropdown dx-dropdown-signin">
+                            <a class="dx-nav-signin" href="account.html" role="button" id="dropdownSignin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="dx-nav-signin-img"><img src="{{ user.author.profile_pic.url }}" alt=""></span>
+                                <span class="dx-nav-signin-name">{{ user.username }}</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownSignin">
+                                <li>
+                                    <a href="{% url 'user-dashboard' %}">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'profile' %}">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li>
+                        
+                        <a href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li>
+                        <span><a href="{% url 'register' %}" class="dx-btn dx-btn-md dx-btn-transparent">Sign Up</a></span>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="dx-navbar dx-navbar-fullscreen">
+        <div class="container">
+            <button class="dx-navbar-burger">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="dx-navbar-content">
+
+                <ul class="dx-nav dx-nav-align-left">
+
+                    <li class="dx-drop-item">
+                        <a href="store.html">
+                            Store
+                        </a>
+                        <ul class="dx-navbar-dropdown">
+
+                            <li>
+                                <a href="store.html">
+                                    Store
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product.html">
+                                    Product
+                                </a>
+                            </li>
+                            <li>
+                                <a href="checkout.html">
+                                    Checkout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dx-drop-item active">
+                        <a href="blog.html">
+                            Blog
+                        </a>
+                        <ul class="dx-navbar-dropdown">
+
+                            <li>
+                                <a href="blog.html">
+                                    Blog
+                                </a>
+                            </li>
+                            <li class=" active">
+                                <a href="single-post.html">
+                                    Single Post
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dx-drop-item">
+                        <a href="help-center.html">
+                            Help Center
+                        </a>
+                        <ul class="dx-navbar-dropdown">
+
+                            <li>
+                                <a href="help-center.html">
+                                    Help Center
+                                </a>
+                            </li>
+                            <li class="dx-drop-item">
+                                <a href="documentations.html">
+                                    Documentations
+                                </a>
+                                <ul class="dx-navbar-dropdown">
+
+                                    <li>
+                                        <a href="documentations.html">
+                                            Documentations
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="single-documentation.html">
+                                            Single documentation
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dx-drop-item">
+                                <a href="articles.html">
+                                    Knowledge Base
+                                </a>
+                                <ul class="dx-navbar-dropdown">
+
+                                    <li>
+                                        <a href="articles.html">
+                                            Knowledge Base
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="single-article-category.html">
+                                            Single Article Category
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="single-article.html">
+                                            Single Article
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dx-drop-item">
+                                <a href="forums.html">
+                                    Forums
+                                </a>
+                                <ul class="dx-navbar-dropdown">
+
+                                    <li>
+                                        <a href="forums.html">
+                                            Forums
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="topics.html">
+                                            Topics
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="single-topic.html">
+                                            Single Topic
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dx-drop-item">
+                                <a href="ticket.html">
+                                    Ticket System
+                                </a>
+                                <ul class="dx-navbar-dropdown">
+
+                                    <li>
+                                        <a href="ticket.html">
+                                            Ticket System
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ticket-submit.html">
+                                            Submit Ticket
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ticket-submit-2.html">
+                                            Submit Ticket 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="single-ticket.html">
+                                            Single Ticket
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dx-drop-item">
+                        <a href="account.html">
+                            Account
+                        </a>
+                        <ul class="dx-navbar-dropdown">
+
+                            <li>
+                                <a href="account.html">
+                                    Account
+                                </a>
+                            </li>
+                            <li>
+                                <a href="account-licenses.html">
+                                    Licenses
+                                </a>
+                            </li>
+                            <li>
+                                <a href="account-settings.html">
+                                    Settings
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="dx-nav dx-nav-align-right">
+
+                    <li>
+                        <a class="dx-nav-icon" href="checkout.html">
+                            <span class="dx-nav-badge">2</span>
+                            <span class="icon dx-icon-bag"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-fancybox data-touch="false" data-close-existing="true" data-src="#login"
+                            href="javascript:;">Log In</a>
+                    </li>
+                    <li>
+                        <span><a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup"
+                                href="javascript:;" class="dx-btn dx-btn-md dx-btn-transparent">Sign Up</a></span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->

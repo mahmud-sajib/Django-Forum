@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="dx-main">
+    <div class="dx-box-5 pb-100 bg-grey-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="dx-box-decorated">
+                        <div class="dx-box-content text-center">
+                            <h2 class="h4">User Dashboard</h2>
+                            <div class="dx-comment-img">
+                                <img style="width: 100px;" style="margin-bottom: 20px;"
+                                    src="{{ user.author.profile_pic.url }}" alt="" class="rounded-circle">
+                            </div>
+                            <p class="mnt5">{{ user.username }} | Joined @ {{ user.date_joined|date }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="dx-box-decorated">
+                        <div class="dx-box-content">
+                            {% if topic_count > 0 %}
+                                <h2 class="h4 text-center">Topics You Posted</h2>
+                                <div class="table-responsive">
+                                    <table class="dx-table dx-table-default">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Topic</th>
+                                                <th scope="col">Views</th>
+                                                <th scope="col">Answers</th>
+                                                <th scope="col">Post Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for post in topic_posted %}
+                                            <tr>
+                                                <th scope="row">
+                                                    <a href="{% url 'topic-detail' post.id %}" class="dx-table-default-title">{{ post.title }}</a>
+                                                </th>
+                                                <td>{{ post.topic_view_count }}</td>
+                                                <td>{{ post.answer_count }}</td>
+                                                <td>{{ post.date_created }}</td>
+                                            </tr>
+                                            {% endfor %}                                 
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                            <h2 class="h4 text-center">You didn't post a topic yet!</h2>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="dx-box-decorated">
+                        <div class="dx-box-content">
+                            {% if ans_count > 0 %}
+                            <h2 class="h4 text-center">Your Answers</h2>
+                            <div class="table-responsive">
+                                <table class="dx-table dx-table-default">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Topic</th>
+                                            <th scope="col">Answers</th>
+                                            <th scope="col">Upvote</th>
+                                            <th scope="col">Downvote</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for ans in ans_posted %}
+                                        <tr>
+                                            <th scope="row">
+                                                <a href="{% url 'topic-detail' ans.user_post.id %}" class="dx-table-default-title">{{ ans.user_post.title }}</a>
+                                                
+                                            </th>
+                                            <td>{{ ans.content }}</td> 
+                                            <td>{{ ans.upvotes.count }}</td>
+                                            <td>{{ ans.downvotes.count }}</td> 
+                                        </tr>
+                                        {% endfor %}                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% else %}
+                            <h2 class="h4 text-center">You didn't answer in a topic yet!</h2>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

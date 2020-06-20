@@ -1,0 +1,36 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div id="signup" style="background: #1B1B1B;">
+    
+    <div class="dx-signin text-center"></div>
+        <h1 class="h3 text-white mb-30">Sign Up</h1>
+
+        <form method="POST" class="dx-form">
+            {% csrf_token %}
+            
+            {{ reg_form }}
+            {{ pro_form }}
+            <div class="dx-form-group-md">
+                <input type="submit" value="Sign Up">
+            </div>
+
+            
+        </form>
+
+        <div class="dx-form-group-md">
+            <div class="d-flex justify-content-between">
+                <span style="color:#bababa;">Already have an account?</span>   
+                <a href="{% url 'login' %}">Log In</a>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
