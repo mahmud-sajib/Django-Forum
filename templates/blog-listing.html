@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="dx-main">
+    <header class="dx-header dx-box-1">
+        <div class="container">
+            <div class="bg-image bg-image-parallax">
+                <img src="{% static 'images/header.jpg' %}" class="jarallax-img" alt="">
+                <div style="background-color: rgba(27, 27, 27, .8);"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-xl-7">
+                    <h1 class="h2 mb-30 text-white text-center">MedicAid Blog</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="dx-separator"></div>
+
+    <div class="dx-box-5 pb-100 bg-grey-6">
+        <div class="container">
+            <div class="row vertical-gap md-gap">
+                <div class="col-lg-8 offset-md-2">
+                    <div class="dx-box dx-box-decorated">
+                        <div class="dx-blog-post">
+                            <div class="dx-blog-post-box pt-30 pb-30">
+                                {% for post in all_posts %}
+                                <a href="{% url 'article-detail' post.slug %}"><h2 class="h5" style="color: #2B72E6;">{{ post.title }}</h2></a>
+                                <p>{{ post.content|safe|truncatewords:30 }}</p>  
+                                
+                                <ul class="dx-blog-post-info" style="margin-bottom: 60px;">
+                                    <li> <i class="fa fa-pencil"></i> Post by: Admin</li>
+                                    <li> <i class="fa fa-calendar" aria-hidden="true"></i> Written at: {{ post.timestamp|date }}</li>
+                                </ul>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                   
+               
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

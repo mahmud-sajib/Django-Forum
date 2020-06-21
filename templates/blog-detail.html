@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="dx-box-1 pb-100 bg-grey-6">
+    <div class="container">
+        <div class="row vertical-gap md-gap">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="dx-blog-post dx-box dx-box-decorated">
+                    <div class="dx-blog-post-box" style="text-align: justify;">
+                        
+                        <h1 class="h3 dx-blog-post-title">{{ post_detail.title }}</h1>
+                        <div style="margin: 35px 0;">
+                            <img src="{{ post_detail.thumbnail.url }}" alt="..." class="img-fluid">
+                        </div>
+                        <p class="mnb-2">{{ post_detail.content|safe }}</p>
+                        <ul class="dx-blog-post-info" style="text-align:center; color: #2B72E6; margin-top:20px;">
+                            <li> <i class="fa fa-pencil"></i> Post by: Admin</li>
+                            <li> <i class="fa fa-calendar" aria-hidden="true"></i> Written at: {{ post_detail.timestamp }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

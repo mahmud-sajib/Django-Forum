@@ -8,16 +8,23 @@ from django.contrib import messages
 
 # Model Forms.
 from .forms import UserPostForm, AnswerForm
-
-
+# String module
+from django.template.loader import render_to_string
 
 # Create your views here.
 
 def home(request):
     user_posts = UserPost.objects.all()
+    
+    # Display latest posts.
+    latest_blogs = BlogPost.objects.order_by('-timestamp')[0:3]
+
+    latest_topics = UserPost.objects.order_by('-date_created')[0:3]
+    
     context = {
         'user_posts':user_posts,
-        # 'ps':ps,
+        'latest_blogs':latest_blogs,
+        'latest_topics':latest_topics
     }
     return render(request, 'forum-main.html', context)
 
@@ -67,6 +74,7 @@ def postTopic(request, pk):
         'topic':post_topic,
         'answers':answers,
         'answer_form':answer_form,
+        
     }
     return render(request, 'topic-detail.html', context)
 
@@ -109,7 +117,6 @@ def searchView(request):
     return render(request, 'search-result.html', context)
 
 
-
 def upvote(request):
     answer = get_object_or_404(Answer, id=request.POST.get('answer_id'))
     
@@ -123,7 +130,7 @@ def upvote(request):
         answer.downvotes.remove(request.user)
         has_upvoted = True
 
-    return redirect('home')
+    return HttpResponseRedirect(answer.user_post.get_absolute_url())
     
 
 def downvote(request):
@@ -138,12 +145,31 @@ def downvote(request):
         answer.downvotes.add(request.user)
         answer.upvotes.remove(request.user)
         has_downvoted = True
+    
+    return HttpResponseRedirect(answer.user_post.get_absolute_url())
 
-    return redirect('home')
+# Blog listing page view.
+def blogListView(request):
     
+    # Display all blog posts.
+    all_posts = BlogPost.objects.all()
     
-    
+    context = {
+        'all_posts':all_posts
+    }
+    return render(request, 'blog-listing.html', context)
 
     
+# Blog single post detail view.
+def blogDetailView(request, slug):
+    # Get specific post by slug.
+    post_detail = get_object_or_404(BlogPost, slug=slug)
+
+    context = {
+        'post_detail':post_detail,
+    }
+
+    return render(request, 'blog-detail.html', context)  
+
 
 

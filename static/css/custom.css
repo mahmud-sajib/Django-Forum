@@ -64,7 +64,7 @@ body{
     border-width: 2px;
 }
 
-.vote-count{
+.upvote-count, .downvote-count{
     border: ;
     width: 10px;
     background-color: #2B72E6;

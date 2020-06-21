@@ -48,6 +48,21 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.user_post.title
+    
+    @property
+    def upvotes_count(self):
+        return Answer.objects.filter(user=self).count()
+
+class BlogPost(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=200, unique=True, null=True, blank=True)
+    content = models.TextField(blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    thumbnail = models.ImageField(default="header.jpg", null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
 
 class TopicView(models.Model):
     user_post = models.ForeignKey(UserPost, on_delete=models.CASCADE)

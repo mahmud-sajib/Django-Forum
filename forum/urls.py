@@ -10,4 +10,6 @@ urlpatterns = [
     path('user-dashboard/', views.userDashboard, name='user-dashboard'),
     path('upvote/', views.upvote, name='upvote'),
     path('downvote/', views.downvote, name='downvote'),
+    path('blog/', views.blogListView, name='blog'),
+    path('article/<slug:slug>/', views.blogDetailView, name='article-detail'),
 ]
