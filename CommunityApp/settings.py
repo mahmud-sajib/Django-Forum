@@ -79,7 +79,6 @@ WSGI_APPLICATION = 'CommunityApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'CommunityAppDB',
         'ENGINE': 'django.db.backends.postgresql',
         'USER': 'postgres',
