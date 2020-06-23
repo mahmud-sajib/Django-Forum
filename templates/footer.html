@@ -153,38 +153,6 @@
 
 <!-- Quill -->
 <script src="{% static 'vendor/quill/dist/quill.min.js' %}"></script>
-<!-- END: Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- <script type="text/javascript">
-    $(document).ready(function () {
-
-        // ajaxifying like button
-        $(document).on('click', '#upvote', function(event) {
-            event.preventDefault();
-            var pk = $(this).attr('value');
-            $.ajax({
-                type: 'POST',
-                url: '{% url "upvote" %}',
-                data: {
-                    'answer_id': pk,
-                    'csrfmiddlewaretoken': '{{ csrf_token }}'
-                },
-                dataType: 'json',
-                success: function (response) {
-                    $('#vote-section').html(response['form']);
-                    console.log($('#vote-section').html(response['form']));
-                },
-                error: function (rs, e) {
-                    console.log(rs.responseText);
-                },
-            });
-        });
-       
-    });
-</script> -->
-
-
 
 </body>
 
