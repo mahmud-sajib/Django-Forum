@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'NAME': 'CommunityAppDB',
         'ENGINE': 'django.db.backends.postgresql',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'admin123',
+        'USER': 'postgres',
+        'PASSWORD': 'admin123',
         # 'HOST': 'localhost',
     }
 }
