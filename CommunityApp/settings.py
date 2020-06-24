@@ -163,9 +163,9 @@ BATON = {
     'CHANGELIST_FILTERS_IN_MODAL': True,
     'MENU_ALWAYS_COLLAPSED': False,
     'MENU': (
-        { 'type': 'free', 'label': 'Dashboard', 'icon': 'fa fa-address-book', 'url': 'http://127.0.0.1:8000/admin/', 'perms': ('flatpages.add_flatpage', 'auth.change_user') 
+        { 'type': 'free', 'label': 'Dashboard', 'icon': 'fa fa-address-book', 'url': 'https://dj-forum.herokuapp.com/admin/', 'perms': ('flatpages.add_flatpage', 'auth.change_user') 
         },
-        { 'type': 'free', 'label': 'Site Home', 'icon': 'fa fa-home', 'url': 'http://127.0.0.1:8000/', 'perms': ('flatpages.add_flatpage', 'auth.change_user') 
+        { 'type': 'free', 'label': 'Site Home', 'icon': 'fa fa-home', 'url': 'https://dj-forum.herokuapp.com/', 'perms': ('flatpages.add_flatpage', 'auth.change_user') 
         },
         {
             'type': 'app',
