@@ -144,6 +144,8 @@ EMAIL_HOST_USER = 'sajibforest@gmail.com'
 EMAIL_HOST_PASSWORD = 'wcxelosgnxuxmqiq'
 DEFAULT_FROM_EMAIL = 'MedicAid Team <noreply@medicaid.org>'
 
+django_heroku.settings(locals())
+
 
 
 # Admin Panel Configuration
@@ -185,4 +187,3 @@ BATON = {
 }
 
 
-django_heroku.settings(locals())
