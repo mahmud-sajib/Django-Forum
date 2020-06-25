@@ -211,3 +211,12 @@ body{
   color: rgb(212, 59, 59);
   margin-bottom: 30px;
 }
+
+.dx-navbar .dx-navbar-burger > span {
+  width: 38px;
+  margin-top: -10px;
+}
+
+.dropdown-menu.show {
+	margin-top: 30px;
+}
