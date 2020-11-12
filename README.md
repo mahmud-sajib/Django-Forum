@@ -15,7 +15,7 @@
 
 ## Introduction
 
-Search previously discussed topics. Create new topic and provide answer to an existing topic. Upvote/Downvote any topic (similar to YouTube system). View activity history. It has an Integrated Blog. Built with Python/Django and 100% free to use.
+Django Forum is a  reddit like community app where people can search previously discussed topics. Create new topic and provide answer to an existing topic. Upvote/Downvote any topic (similar to YouTube system). View activity history. It has an Integrated Blog. Built with Python/Django and 100% free to use.
 
 ## Features
 
