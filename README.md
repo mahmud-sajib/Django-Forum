@@ -15,13 +15,7 @@
 
 ## Introduction
 
-<img src="https://img.shields.io/static/v1.svg?label=Open Source&message=❤&color=red">
-
-<img src="https://img.shields.io/static/v1.svg?label=Built with&message=django 2.2&color=brightgreen">
-
-<img src="https://img.shields.io/static/v1.svg?label=PRs&message=welcome&color=orange">
-
-<img src="https://img.shields.io/static/v1.svg?label=Coded by&message= @mahmud-sajib&color=green">
+![OpenSource](https://img.shields.io/badge/OpenSource-Yes-red) ![BuiltWith](https://img.shields.io/badge/BuiltWith-django-green) ![CodedBy](https://img.shields.io/badge/CodedBy-@mahmud-orange) ![PRs](https://img.shields.io/badge/PRs-welcome-yellowgreen)
 
 Search previously discussed topics. Create new topic and provide answer to an existing topic. Upvote/Downvote any topic (similar to YouTube system). View activity history. It has an Integrated Blog. Built with Python/Django and 100% free to use.
 
