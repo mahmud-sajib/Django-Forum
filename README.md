@@ -15,8 +15,6 @@
 
 ## Introduction
 
-![OpenSource](https://img.shields.io/badge/OpenSource-Yes-red) ![BuiltWith](https://img.shields.io/badge/BuiltWith-django-green) ![CodedBy](https://img.shields.io/badge/CodedBy-@mahmud-orange) ![PRs](https://img.shields.io/badge/PRs-welcome-yellowgreen)
-
 Search previously discussed topics. Create new topic and provide answer to an existing topic. Upvote/Downvote any topic (similar to YouTube system). View activity history. It has an Integrated Blog. Built with Python/Django and 100% free to use.
 
 ## Features
