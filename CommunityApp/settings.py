@@ -78,13 +78,20 @@ WSGI_APPLICATION = 'CommunityApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'NAME': 'CommunityAppDB',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'USER': 'postgres',
+#         'PASSWORD': 'admin123',
+#         # 'HOST': 'localhost',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'NAME': 'CommunityAppDB',
-        'ENGINE': 'django.db.backends.postgresql',
-        'USER': 'postgres',
-        'PASSWORD': 'admin123',
-        # 'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
