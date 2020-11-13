@@ -35,12 +35,13 @@ A few of the things you can do with MedicAid:
 **Installation Process (Windows)**
 
 1. Create a Virtual Environment `virtualenv projectenv`
-2. Activate Virtual Environment `cd/projectenv/scripts/activate`
-1. Clone This Project `git clone https://github.com/mahmud-sajib/Django-Forum.git`
-2. Go To Project Directory `cd Django-Forum`
-5. Install Required Package `pip install -r requirements.txt`
-6. Migrate Database `python manage.py migrate`
-7. Finally Run The Project `python manage.py runserver`
+2. Go To environment Directory `cd projectenv/scripts`
+3. Activate Virtual Environment `activate`
+4. Clone This Project `git clone https://github.com/mahmud-sajib/Django-Forum.git`
+5. Go To Project Directory `cd Django-Forum`
+6. Install Required Package `pip install -r requirements.txt`
+7. Migrate Database `python manage.py migrate`
+8. Finally Run The Project `python manage.py runserver`
 
 ## Project Demo
 
