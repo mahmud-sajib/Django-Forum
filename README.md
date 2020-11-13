@@ -54,6 +54,18 @@ Live Project url: [dj-forum.herokuapp.com](http://dj-forum.herokuapp.com/)
   <img src = "https://i.imgur.com/RgYczYb.png" width=700>
 </p>
 
+### Signup Page
+
+<p>
+  <img src = "https://i.imgur.com/I8xwoSJ.png" width=700>
+</p>
+
+### Login Page
+
+<p>
+  <img src = "https://i.imgur.com/PowR4Zc.png" width=700>
+</p>
+
 ### Topic Create Page
 
 <p>
