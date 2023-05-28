@@ -45,10 +45,6 @@ A few of the things you can do with MedicAid:
 
 ## Project Demo
 
-### Live Demo
-
-Live Project url: [dj-forum.herokuapp.com](http://dj-forum.herokuapp.com/)
-
 ### Forum Home Page
 
 <p>
